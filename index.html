@@ -20,9 +20,12 @@
   <header id="header">
     <div class="container navbar">
       <a href="#hero" class="logo">Hazrat Usman</a>
-      <button class="menu-toggle" id="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
+      <input class="menu-checkbox" type="checkbox" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+      <label class="menu-toggle" for="mobile-menu-toggle" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -375,42 +378,7 @@
       </div>
     </div>
   </footer>
-  <script>
-    // Accessible mobile navigation toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-btn');
-    const navLinks = document.getElementById('nav-links');
-    const menuIcon = mobileMenuButton.querySelector('i');
 
-    function closeMobileMenu() {
-      navLinks.classList.remove('active');
-      mobileMenuButton.setAttribute('aria-expanded', 'false');
-      mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
-      menuIcon.classList.remove('fa-xmark');
-      menuIcon.classList.add('fa-bars');
-      document.body.classList.remove('menu-open');
-    }
-
-    mobileMenuButton.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('active');
-      mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
-      mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      menuIcon.classList.toggle('fa-bars', !isOpen);
-      menuIcon.classList.toggle('fa-xmark', isOpen);
-      document.body.classList.toggle('menu-open', isOpen);
-    });
-
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) closeMobileMenu();
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMobileMenu();
-    });
-  </script>
 </body>
 
 </html>
