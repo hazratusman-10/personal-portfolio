@@ -875,3 +875,250 @@
         padding: 30px 20px;
       }
     }
+/* ==========================================================================
+   Responsive refinements (mobile navigation + small-screen layouts)
+   ========================================================================== */
+img {
+  max-width: 100%;
+}
+
+.menu-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+}
+
+/* Prevent the page behind the open mobile menu from scrolling. */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Keep anchored sections visible below the fixed header. */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 768px) {
+  header {
+    z-index: 1100;
+  }
+
+  .navbar {
+    height: 72px;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-size: 1.5rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-links {
+    top: 72px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100dvh - 72px);
+    min-height: 0;
+    padding: 28px 20px 40px;
+    justify-content: flex-start;
+    gap: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    background: rgba(7, 9, 14, 0.98);
+    border: 0;
+    border-top: 1px solid var(--card-border);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav-links.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 13px 16px;
+    width: 100%;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  #hero {
+    min-height: auto;
+    padding-top: 125px;
+    padding-bottom: 70px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    justify-content: center;
+    padding: 12px 18px;
+  }
+
+  .hero-visual {
+    margin-top: 0;
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.1rem);
+  }
+
+  .section-subtitle {
+    margin-bottom: 34px;
+    padding: 0 4px;
+    font-size: 0.95rem;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .about-wrapper,
+  .edu-card,
+  .contact-form {
+    padding: 24px 18px;
+  }
+
+  .contact-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .footer-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  #hero {
+    padding-top: 112px;
+    padding-bottom: 56px;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 7px 11px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.8rem, 8.2vw, 2.25rem);
+    letter-spacing: -0.7px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .profile-img-wrapper {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-subtitle {
+    margin-bottom: 28px;
+  }
+
+  .about-wrapper,
+  .edu-card,
+  .contact-form {
+    padding: 20px 15px;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+
+  .copyright {
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
