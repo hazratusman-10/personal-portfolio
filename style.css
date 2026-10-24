@@ -1190,3 +1190,134 @@ section[id] {
     left: 0;
   }
 }
+
+
+/* Final mobile overflow fixes: prevent horizontal page scrolling */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+.project-card,
+.skill-card,
+.journey-card,
+.edu-card,
+.contact-info {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Grid tracks must be allowed to shrink below their content's intrinsic width. */
+.hero-grid,
+.skills-grid,
+.projects-grid,
+.journey-grid,
+.contact-container {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .navbar {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .logo {
+    min-width: 0;
+    max-width: calc(100% - 60px);
+    overflow-wrap: normal;
+  }
+
+  .hero-grid,
+  .skills-grid,
+  .projects-grid,
+  .journey-grid,
+  .contact-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-text,
+  .hero-visual,
+  .skill-card,
+  .project-card,
+  .journey-card,
+  .contact-info,
+  .contact-form {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    min-width: 0;
+  }
+
+  .hero-buttons .btn {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  #toast {
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-width: calc(100% - 32px);
+  }
+
+  #backToTop {
+    left: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.75rem;
+  }
+}
