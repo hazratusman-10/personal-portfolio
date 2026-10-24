@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f4f6f9;
+    padding: 30px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.total{
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.total li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+button{
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.present{
+    background: #28a745;
+    color: white;
+}
+
+.present:hover{
+    background: #218838;
+}
+
+.absent{
+    background: #dc3545;
+    color: white;
+}
+
+.absent:hover{
+    background: #c82333;
+}
+
+button:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.presentList,
+.absentList{
+    max-width: 700px;
+    margin: 25px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.presentList h1{
+    color: #28a745;
+    font-size: 25px;
+}
+
+.absentList h1{
+    color: #dc3545;
+    font-size: 25px;
+}
+
+.presentLi li{
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+.absentLi li{
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+hr{
+    display: none;
+}
+
+h3{
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+}
+
+span{
+    font-weight: bold;
+    color: #007bff;
+}
+
+.reset{
+    display: block;
+    margin: 20px auto;
+    background: #007bff;
+    color: white;
+    padding: 10px 25px;
+}
+
+.reset:hover{
+    background: #0056b3;
+}

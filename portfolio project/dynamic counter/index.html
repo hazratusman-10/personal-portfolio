@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      margin: 0;
+    }
+    .counter-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 250px;
+    }
+    #count {
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #333;
+    }
+    .btn {
+      padding: 10px 18px;
+      font-size: 1rem;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn-inc { background: #4CAF50; color: white; }
+    .btn-dec { background: #f44336; color: white; }
+    .btn-reset { background: #888; color: white; }
+    .btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+  <div class="counter-card">
+    <h2>Dynamic Counter</h2>
+    <div id="count">0</div>
+    
+    <button class="btn btn-dec" id="btnDecrease">-</button>
+    <button class="btn btn-reset" id="btnReset">Reset</button>
+    <button class="btn btn-inc" id="btnIncrease">+</button>
+  </div>
+
+  <script src="app.js"> </script>
+
+</body>
+</html>

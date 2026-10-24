@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food Cards</title>
+
+<!-- Animate.css -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<style>
+  body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+  }
+
+  .card {
+    background: white;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .card h3 {
+    margin: 10px 0;
+  }
+
+  .card p {
+    padding: 0 10px;
+    color: gray;
+  }
+
+  .card button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Hover effect */
+  .card:hover {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Card 1 -->
+  <div class="card animate__animated animate__fadeInLeft">
+    <img src="https://picsum.photos/250/150?1">
+    <h3>Burger</h3>
+    <p>Tasty and juicy burger</p>
+    <button class="animate__animated animate__pulse animate__infinite">
+      Order
+    </button>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+    <img src="https://picsum.photos/250/150?2">
+    <h3>Pizza</h3>
+    <p>Cheesy delicious pizza</p>
+    <button>Order</button>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card animate__animated animate__fadeInRight animate__delay-2s">
+    <img src="https://picsum.photos/250/150?3">
+    <h3>Fries</h3>
+    <p>Crispy golden fries</p>
+    <button>Order</button>
+  </div>
+
+</div>
+
+</body>
+</html>

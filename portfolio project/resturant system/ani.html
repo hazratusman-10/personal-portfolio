@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Hero</title>
+
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('https://picsum.photos/1200/800') no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+
+            <!-- Heading -->
+            <h1 class="animate__animated animate__fadeInDown">
+                Welcome to TastyBite
+            </h1>
+
+            <!-- Paragraph -->
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                Delicious food at your doorstep
+            </p>
+
+            <!-- Button -->
+            <button class="animate__animated animate__pulse animate__infinite">
+                Order Now
+            </button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
